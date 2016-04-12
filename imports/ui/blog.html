@@ -1,0 +1,22 @@
+<template name="blog">
+  <div class="container">
+    <header>
+    <h1>Temp</h1>
+    </header>
+      {{#each posts}}
+        {{> post}}
+      {{/each}}
+  </div>
+</template>
+ 
+<template name="post">
+  <table>
+    <tr>
+      <td>{{title}}</td>
+    </tr>
+    <tr>
+      <td>{{user.username}}</td>
+      <td>{{body}}</td>
+    </tr>
+  </table>
+</template>

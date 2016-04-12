@@ -1,0 +1,23 @@
+<template name="userlist">
+  <div class="container">
+    <header>
+      <h1>User list</h1>
+    </header>
+    <table border="1">
+      <tr>
+        <th>Username</th>
+        <th>User since</th>
+      </tr>
+      {{#each users}}
+        {{> user}}
+      {{/each}}
+    </table>
+  </div>
+</template>
+ 
+<template name="user">
+  <tr>
+    <td>{{username}}</td>
+    <td>{{createdAt}}</td>
+  </tr>
+</template>
