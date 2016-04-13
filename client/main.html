@@ -4,9 +4,9 @@
 
 <body>
   <h1>Welcome to Blagger!</h1>
+  {{> loginButtons }}
   {{> userlist}}
   {{#if validUser }}
     {{> blog }}
   {{/if}}
-  {{> createUser }}
 </body>

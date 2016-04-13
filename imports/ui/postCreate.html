@@ -1,0 +1,20 @@
+<template name="createPost">
+  <div class="container">
+    <header>
+      <h1>Create Post</h1>
+    </header>
+    <form class="new-post">
+      <div class="error" id="createPostError">
+        Please Review<br>
+      </div>
+      Title: <input type="text" name="Title"/>
+      <span class="error" id="titleBlank">Title is required</span>
+      <br>
+      Body: <textarea rows="10" cols="30"  name="Body"></textarea>
+      <span class="error" id="bodyBlank">Body is Required</span>
+      <br>
+      <input type="submit"/>
+    </form>
+  </div>
+</template>
+ 

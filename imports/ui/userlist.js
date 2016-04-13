@@ -15,3 +15,13 @@ Template.userlist.helpers({
 	  return Users.find({});
   }
 });
+Template.user.helpers({
+  formattedDate(date) {
+    return date.toDateString();
+  },
+  emailAddress() {
+    var self = this;
+    var email = ('emails' in self) ? self.emails[0].address : null;
+    return email;
+  }
+});

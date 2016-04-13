@@ -1,12 +1,17 @@
 <template name="blog">
   <div class="container">
     <header>
-    <h1>Temp</h1>
+    <h1>{{ blogAuthorName }}'s Blog</h1>
     </header>
       {{#each posts}}
         {{> post}}
       {{/each}}
-  </div>
+    </div>
+    {{#if currentUser }}
+      {{#if ownBlog }}
+        {{> createPost }}
+        {{/if}}
+    {{/if}}
 </template>
  
 <template name="post">
@@ -15,8 +20,14 @@
       <td>{{title}}</td>
     </tr>
     <tr>
-      <td>{{user.username}}</td>
-      <td>{{body}}</td>
+      <td>{{ postAuthorName }}</td>
+      <td>{{ body }}</td>
     </tr>
   </table>
+  {{#if currentUser }}
+    <button class="comment">Comment</button>
+    {{/if}}
+    {{#if displayComment }}
+      Test
+    {{/if}}
 </template>

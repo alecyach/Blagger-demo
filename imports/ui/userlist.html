@@ -6,7 +6,7 @@
     <table border="1">
       <tr>
         <th>Username</th>
-        <th>User since</th>
+        <th>Email</th>
       </tr>
       {{#each users}}
         {{> user}}
@@ -17,7 +17,7 @@
  
 <template name="user">
   <tr>
-    <td>{{username}}</td>
-    <td>{{createdAt}}</td>
+    <td>{{ username }}</td>
+    <td>{{ emailAddress }}</td>
   </tr>
 </template>
