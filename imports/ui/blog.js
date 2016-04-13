@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Posts } from '../api/posts.js';
 import { Users } from '../api/users.js';
 import './postCreate.js';
+import './commentCreate.html';
 import './blog.html';
  
 Template.blog.helpers({
