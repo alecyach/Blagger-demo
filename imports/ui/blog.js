@@ -7,6 +7,7 @@ import './postCreate.js';
 import './commentCreate.js';
 import './blog.html';
 
+
 var Blog = {
   getPosts: function(id, parentId, order) {
     return Posts.find({
