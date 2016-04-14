@@ -22,7 +22,18 @@ var Blog = {
   getComments: function(id) {
     return this.getPosts({ $ne: null }, id, 1);
   },
-  commentHelpers: { 
+  deletePosts: function(post) {
+    var comments = Blog.getComments(post._id);
+    comments.forEach(Blog.deletePosts);
+    Posts.remove({_id: post._id});
+  },
+  events: {
+    "click .delete-button": function () {
+      Blog.deletePosts(this);
+    }
+  },
+
+  commentHelpers: {
     postAuthorName: function () {
       var self = this;
       var user = Users.findOne({
@@ -36,6 +47,9 @@ var Blog = {
     },
     comments: function() {
       return Blog.getComments(this._id);
+    },
+    ownBlog: function () {
+      return Meteor.userId() == this.userId;
     }
   }
 }
@@ -62,3 +76,5 @@ Template.blog.helpers({
 
 Template.post.helpers(Blog.commentHelpers);
 Template.comment.helpers(Blog.commentHelpers);
+Template.post.events(Blog.events);
+Template.comment.events(Blog.events);
