@@ -14,19 +14,38 @@
     {{/if}}
 </template>
 <template name="post">
-  <table>
-    <tr>
-      <td>{{title}}</td>
-    </tr>
-    <tr>
-      <td>{{ postAuthorName }}</td>
-      <td>{{ body }}</td>
-    </tr>
-  </table>
-  {{#if currentUser }}
-    <button class="comment">Comment</button>
+  <div class="post">
+    <table>
+      <tr>
+        <td>{{title}}</td>
+      </tr>
+      <tr>
+        <td>{{ postAuthorName }}</td>
+        <td>{{ body }}</td>
+      </tr>
+    </table>
+    {{#if currentUser }}
+      {{> createComment parentId=_id}}
     {{/if}}
-    {{#if displayComment }}
-      Test
+    {{#each comments }}
+      {{> comment }}
+    {{/each}}
+  </div>
+</template>
+
+<template name="comment">
+  <div class="comment">
+    <table>
+      <tr>
+        <td>{{ postAuthorName }}</td>
+        <td>{{ body }}</td>
+      </tr>
+    </table>
+    {{#if currentUser }}
+      {{> createComment parentId=_id}}
     {{/if}}
+    {{#each comments}}
+      {{> comment }}
+    {{/each}}
+  </div>
 </template>
