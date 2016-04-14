@@ -40,7 +40,7 @@ Template.createComment.events({
       target.reset();
     }
   },
-  "click .comment": function () {
+  "click .comment-button": function () {
     const instance = Template.instance();
     const display = instance.display.get()
     console.log(display)

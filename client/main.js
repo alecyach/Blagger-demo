@@ -15,3 +15,9 @@ Template.body.helpers({
     return Session.get("currentUser") !== null;
   }
 });
+Template.titleBar.events({
+  "click .blog-list-button": function () {
+    console.log("test");
+    Session.set("currentUser", null);
+  }
+});

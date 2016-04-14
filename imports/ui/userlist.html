@@ -1,23 +1,18 @@
 <template name="userlist">
   <div class="container">
     <header>
-      <h1>User list</h1>
+      <h1>Blog list</h1>
     </header>
-    <table border="1">
-      <tr>
-        <th>Username</th>
-        <th>Email</th>
-      </tr>
+    <table class="table table-striped table-hover col-md-12 blog-list">
+      <tbody>
       {{#each users}}
         {{> user}}
       {{/each}}
+      </tbody>
     </table>
   </div>
 </template>
  
 <template name="user">
-  <tr>
-    <td>{{ username }}</td>
-    <td>{{ emailAddress }}</td>
-  </tr>
+  <tr><td class="blog-list-entry">{{ username }}'s blog</td></tr>
 </template>

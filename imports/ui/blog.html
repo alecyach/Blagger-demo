@@ -2,28 +2,26 @@
   <div class="container">
     <header>
     <h1>{{ blogAuthorName }}'s Blog</h1>
-    </header>
-      {{#each posts}}
-        {{> post}}
-      {{/each}}
-    </div>
     {{#if currentUser }}
       {{#if ownBlog }}
         {{> createPost }}
         {{/if}}
     {{/if}}
+    </header>
+    {{#each posts}}
+      {{> post}}
+    {{/each}}
+  </div>
 </template>
 <template name="post">
-  <div class="post">
-    <table>
-      <tr>
-        <td>{{title}}</td>
-      </tr>
-      <tr>
-        <td>{{ postAuthorName }}</td>
-        <td>{{ body }}</td>
-      </tr>
-    </table>
+  <div class="post col-md-12">
+    <div class="title text-center col-md-12">{{title}}</div>
+    <div class="author col-md-2">
+      {{ postAuthorName }}
+      <br>
+      Posted: {{ createdAt }}
+    </div>
+    <div class="col-md-10">{{ body }}</div>
     {{#if currentUser }}
       {{> createComment parentId=_id}}
     {{/if}}
@@ -34,13 +32,13 @@
 </template>
 
 <template name="comment">
-  <div class="comment">
-    <table>
-      <tr>
-        <td>{{ postAuthorName }}</td>
-        <td>{{ body }}</td>
-      </tr>
-    </table>
+  <div class="comment col-md-10 pull-right">
+    <div class="author col-md-2">
+      {{ postAuthorName }}
+      <br>
+      Posted: {{ createdAt }}
+    </div>
+    <div class="col-md-10">{{ body }}</div>
     {{#if currentUser }}
       {{> createComment parentId=_id}}
     {{/if}}

@@ -3,10 +3,34 @@
 </head>
 
 <body>
-  <h1>Welcome to Blagger!</h1>
-  {{> loginButtons }}
-  {{> userlist}}
-  {{#if validUser }}
-    {{> blog }}
-  {{/if}}
+  {{> titleBar }}
+  <div class="content">
+    {{#if validUser }}
+      {{> blog }}
+    {{else}}
+      {{> userlist}}
+    {{/if}}
+  </div>
 </body>
+
+<template name="titleBar">
+  <div class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Blagger</a>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#" class="blog-list-button">Blogs</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        {{> loginButtons}} <!-- here -->
+      </ul>
+    </div>
+  </div>
+</template>

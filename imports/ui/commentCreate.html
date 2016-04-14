@@ -1,21 +1,23 @@
 <template name="createComment">
-  <button class="comment">Comment</button>
+  <div class="col-md-12">
+    <button class="comment-button btn btn-default pull-right">Reply</button>
+  </div>
   {{#if displayComment}}
-    <div class="container">
+    <div class="container col-md-12">
       <header>
         <h1>Create Comment</h1>
       </header>
-      <form class="new-comment">
+      <form class="new-comment col-md-12">
         <div class="error" id="createCommentError">
           Please Review<br>
         </div>
         <div class="error" id="notLoggedIn">
           You must be logged in to comment<br>
         </div>
-        Text: <textarea rows="10" cols="30"  name="Body"></textarea>
+        <textarea rows="10" name="Body" class="col-md-12"></textarea>
         <span class="error" id="bodyBlank">Body is Required</span>
         <br>
-        <input type="submit"/>
+        <input type="submit" class="btn btn-default pull-right" value="Post"/>
       </form>
     </div>
   {{/if}}

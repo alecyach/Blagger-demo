@@ -6,10 +6,49 @@
 .error {
   display: none;
 }
+.content {
+  min-width: 1015px;
+}
 .post {
-  border: 2px solid #73AD21;
+  background-color: rgb(249, 249, 249);
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
 }
 .comment {
-  border: 2px solid #252525;
+  margin-top: 5px;
+  border-width: 1px;
+  border-style: solid;
+  background-color: rgb(249, 249, 249);
   margin-left: 20px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+.title {
+  width: 100%;
+  font-weight:bold;
+  border-bottom: thin solid black;
+}
+.author {
+  min-height: 100%;
+  height: 100%;
+  font-size: 80%;
+  color: blue;
+}
+.create-post {
+  background-color: rgb(249, 249, 249);
+  border-width: 1px;
+  border-style: solid;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.blog-list{
+  font-size: 200%;
 }
