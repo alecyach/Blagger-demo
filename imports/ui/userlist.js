@@ -11,17 +11,12 @@ Template.user.events({
   }
 });
 Template.userlist.helpers({
-  users() {
+  users: function() {
 	  return Users.find({});
   }
 });
 Template.user.helpers({
-  formattedDate(date) {
+  formattedDate: function(date) {
     return date.toDateString();
-  },
-  emailAddress() {
-    var self = this;
-    var email = ('emails' in self) ? self.emails[0].address : null;
-    return email;
   }
 });

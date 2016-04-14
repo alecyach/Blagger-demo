@@ -7,7 +7,7 @@
   display: none;
 }
 .content {
-  min-width: 1015px;
+  min-width: 1024px;
 }
 .post {
   background-color: rgb(249, 249, 249);
@@ -22,7 +22,7 @@
   margin-top: 5px;
   border-width: 1px;
   border-style: solid;
-  background-color: rgb(249, 249, 249);
+  background-color: rgb(255, 255, 255);
   margin-left: 20px;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;

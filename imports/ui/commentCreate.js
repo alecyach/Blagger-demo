@@ -24,10 +24,10 @@ Template.createComment.events({
         error = true;
         fieldStyle = "inline";
       }
-      $("#" + e).css("display", fieldStyle);
+      $("#" + e + this.parentId).css("display", fieldStyle);
     }
     var style = error ? "inline" : "none";
-    $("#createCommentError").css("display", style);
+    $("#createCommentError" + this.parentId).css("display", style);
     console.log(self.parentId);
     if (!error) {
       Posts.insert({

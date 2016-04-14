@@ -8,14 +8,14 @@
         <h1>Create Comment</h1>
       </header>
       <form class="new-comment col-md-12">
-        <div class="error" id="createCommentError">
+        <div class="error" id="createCommentError{{ parentId }}">
           Please Review<br>
         </div>
-        <div class="error" id="notLoggedIn">
+        <div class="error" id="notLoggedIn{{ parentId }}">
           You must be logged in to comment<br>
         </div>
         <textarea rows="10" name="Body" class="col-md-12"></textarea>
-        <span class="error" id="bodyBlank">Body is Required</span>
+        <span class="error" id="bodyBlank{{ parentId }}">Comment cannot be empty</span>
         <br>
         <input type="submit" class="btn btn-default pull-right" value="Post"/>
       </form>
