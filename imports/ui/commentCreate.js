@@ -8,7 +8,7 @@ Template.createComment.onCreated(function () {
   this.display = new ReactiveVar(false);
 });
 Template.createComment.events({
-  'submit .new-comment': function(event) {
+  'submit .new-comment': function(event, instance) {
     event.preventDefault();
     const target = event.target;
     const body = target.Body.value;
