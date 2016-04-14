@@ -19,14 +19,17 @@ var Blog = {
       }
     });
   },
+  
   getComments: function(id) {
     return this.getPosts({ $ne: null }, id, 1);
   },
+  
   deletePosts: function(post) {
     var comments = Blog.getComments(post._id);
     comments.forEach(Blog.deletePosts);
     Posts.remove({_id: post._id});
   },
+  
   events: {
     "click .delete-button": function () {
       Blog.deletePosts(this);
